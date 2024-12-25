@@ -2,12 +2,12 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { IoCarSport } from "react-icons/io5";
 import { signInWithEmailAndPassword , signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
 import { auth } from "../firebase/firebase";
 import { FaGoogle } from "react-icons/fa6";
+import { toast, ToastContainer } from 'react-toastify';
 
 const Login = ()=>{
  
@@ -15,6 +15,7 @@ const Login = ()=>{
 
   let navigate = useNavigate();
 
+const isLoginIn = true
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   
@@ -22,15 +23,22 @@ const Login = ()=>{
    const onSubmit = async (data) => {
      try {
        const response = await signInWithEmailAndPassword(auth, data.email, data.password);
-       toast("Login successful");
-         setTimeout(() => {
-           navigate("/home");
-         }, 2000);
+       if(isLoginIn){
+        localStorage.setItem('token',response._tokenResponse.idToken);
+        setTimeout(() => {
+          navigate("/home", {state:{message:"Login successful"} });
+        }, 1000);
+       }
+        
+       console.log(response._tokenResponse.idToken);
+
        localStorage.setItem('role',response.user.email);
-       console.log(response.user.email);
+       localStorage.setItem('Id',response.user.uid);
+       localStorage.setItem('user',response);
+       console.log(response.user.uid);
      } catch (error) {
        console.error("Error:", error);
-       toast.error(error.response?.data?.message || "Failed to login. Please try again.");
+       toast.error(error.response?.data?.message || "Failed to login. Please try again.", {autoClose: 2000});
      } finally {
       
      }
@@ -60,9 +68,9 @@ const Login = ()=>{
   return (
     <>
     <ToastContainer/>
-      <div className=' flex flex-col justify-center'>
- <div className='m-auto border-2 w-max p-14  rounded-lg shadow-3xl bg-transparent'>
-          <div className="p-8">
+      <div className=' flex flex-col justify-center items-center my-8'>
+ <div className='w-[95%] sm:w-[80%] md:w-max lg:w-max xl:w-max border p-10 rounded-lg shadow-3xl bg-transparent'>
+          <div className="p-6">
             <IoCarSport className="w-20 h-20 m-auto text-black" />  
           </div>
 
@@ -126,7 +134,7 @@ const Login = ()=>{
             </div>
 
             <div>
-            <button onClick={handleGoogleLogin} className='border bg-black   p-3 px-16 rounded-lg mt-4 text-white text-center flex'>Login with Google <span className='mt-1 ml-2'><FaGoogle /></span>  </button>
+            <button onClick={handleGoogleLogin} className='border bg-black  w-full p-3  px-16 rounded-lg mt-4 text-white text-center flex'><span className='m-auto'><FaGoogle size={25}></FaGoogle></span></button>
             </div>
           </form>
         </div>

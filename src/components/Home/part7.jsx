@@ -46,9 +46,9 @@ const Offer = () => {
 
 
     return (
-        <div >  <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-around items-center  p-10 rounded-xl m-10">
+        <div style={{ fontFamily: "cursive" }}>  <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-around items-center p-10 rounded-xl m-10">
         <div className="flex flex-col justify-center items-center" data-aos="zoom-in">
-            <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-yellow-600">All cars are 20% off now!
+            <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-blue-700">All cars are 20% off now!
                 <div>Don't miss this offer</div>
             </h1>
             <div>
@@ -63,7 +63,7 @@ const Offer = () => {
                     <th className="p-2">Seconds</th>
                     </thead>
                     
-                    <tr className="text-center text-yellow-600 text-2xl font-semibold">
+                    <tr className="text-center text-blue-700 text-2xl font-semibold">
                         <td>{timeLeft.days}</td>
                         <td>{timeLeft.hours}</td>
                         <td>{timeLeft.minutes}</td>

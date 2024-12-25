@@ -1,19 +1,24 @@
 import { FaFacebookF, FaTwitter, FaInstagram,FaLocationArrow,FaPhoneAlt,FaVoicemail } from 'react-icons/fa';
+import { IoCarSport } from "react-icons/io5";
 
 
 const Footer = () => {
   return (
-    <div className='w-[100%] bg-gray-800 flex justify-center mt-10'>
-    <footer className="bg-gray-800 text-white py-10 font-serif">
+    <div className='w-full bg-gradient-to-b from-gray-700 to-gray-900 flex justify-center mt-10' id='contact'>
+    <footer className="bg-gradient-to-b from-gray-700 to-gray-900 text-white py-10" style={{fontFamily:"cursive"}}>
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
 
           <div>
-            <h3 className="font-bold text-lg mb-4">RENTCARS</h3>
-            <ul>
 
-             
-            <div className='flex gap-2 mb-2'>
+            <div className='flex gap-6'>
+            <IoCarSport className='text-8xl relative bottom-8'/>
+            <h3 className="font-bold text-sm sm:text-lg md:text-lg lg:text-lg xl:text-lg">RENTCARS</h3>
+            </div>
+          
+
+            <ul>
+            <div className='flex gap-2 mb-2 relative bottom-4'>
                 <FaLocationArrow className='text-2xl '/>
                 <li className='text-sm font-thin'> hosary mosque, 6 october, cairo, egypt</li>
                 </div>

@@ -3,7 +3,11 @@ import logo from '../../../src/assets/img/RENT_MUSICAL_BLUE-logo-4631FB248C-seek
 import Close from '../Home/close';
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
-import { useState } from 'react';
+import { useContext} from 'react';
+import { Context } from '../Context/Context';
+import { LuCalendarCheck } from "react-icons/lu";
+import  { useState, useEffect } from 'react';
+import { GiHamburgerMenu } from "react-icons/gi";
 
 
 
@@ -12,55 +16,95 @@ const Navbar = () => {
 
    const admin = localStorage.getItem('role');
 
-   const [isDarkMode, setIsDarkMode] = useState(false);
-
-   const toggleMode = () => {
-     if (isDarkMode) {
-       document.body.style.backgroundColor = 'white';
-       document.body.style.color = 'black';
-     } else {
-       document.body.style.backgroundColor = 'black';
-       document.body.style.color = 'white';
-     }
-     setIsDarkMode(!isDarkMode); // تحديث الحالة
-   };
- 
+   const { isDarkMode, toggleMode } = useContext(Context);
+   const [isNavbarVisible, setNavbarVisible] = useState(false);
 
 
+   const {orderList} = useContext(Context);
+
+
+   const [orderCount, setOrderCount] = useState(orderList.length);
+
+   console.log(orderCount);
+
+   useEffect(() => {
+    setOrderCount(orderList.length);
+  }, [orderList]);
+
+  const toggleNavbar = () => {
+    setNavbarVisible(!isNavbarVisible);
+
+  };
 
     return (
-        <div className="flex flex-row justify-between w-[100%] px-10">
-
+        <div className="flex flex-row justify-between w-[100%] px-10" style={{fontFamily: 'cursive'}}>
 
 <div className='flex flex-row mr-20 mt-5 gap-4'>
         <img src={logo} alt="logo" className='w-10 h-10' id='logo'/> 
-        <h2 className='text-xl  text-start text-blue-400 font-extrabold mt-1 hover:text-blue-800'>RENTCARS</h2>
+        <h2 className='text-md sm:text-lg md:text-lg lg:text-lg xl:text-lg text-start text-blue-600 font-extrabold mt-1 hover:text-blue-800'>RENTCARS</h2>
+        <GiHamburgerMenu className="text-3xl absolute right-4 text-blue-700 cursor-pointer block sm:hidden md:hidden lg:hidden xl:hidden" onClick={toggleNavbar} />
         {isDarkMode ? <MdOutlineLightMode className='text-2xl mt-1 cursor-pointer' onClick={toggleMode} /> : <MdOutlineDarkMode className='text-2xl mt-1 cursor-pointer' onClick={toggleMode} />}
+
 
 
         </div>
 
-
-           <ul className="flex gap-4 justify-center m-6 cursor-pointer font-bold t text-lg text-blue-500">
-            <li><Link to="home">Home</Link></li>
-            <li><Link to="allcars">Cars</Link></li>
-            {admin === 'hazemsaad231@gmail.com' ? <li><Link to="addCar">addCar</Link></li>:null}
-            <li><a href="#contact">Contact Us</a></li>
-
+        <div>
+ {/* القائمة */}
+ {isNavbarVisible && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-95 flex flex-col  items-center justify-center gap-20 z-50"
+        data-aos = "zoom-out">
+          <ul className="text-center flex flex-col gap-20 font-bold text-2xl text-blue-700">
+            <li>
+              <Link to="home" onClick={toggleNavbar}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="allcars" onClick={toggleNavbar}>
+                Book a Car
+              </Link>
+            </li>
+            <li>
+              <Link to="offers" onClick={toggleNavbar}>
+                Rent a Car
+              </Link>
+            </li>
+            {admin === 'hazemsaad231@gmail.com' ? <li><Link to="booking" onClick={toggleNavbar}>Manage Cars</Link></li>:<li><a href='#contact' onClick={toggleNavbar}>Contact Us</a></li>
+            }
             <li><Close/></li>
+          
+          </ul>
+          {/* زر إغلاق */}
+          <button
+            onClick={toggleNavbar}
+            className="text-red-500 font-bold text-xl absolute top-4 right-4"
+          >
+           ✖
+          </button>
+        </div>
+      )}
+  
+        </div>
 
-
-           
-
-    
-            
-            
-
+<div className='hidden sm:block md:block lg:block xl:block'>
+<ul className={`flex gap-6 justify-center m-6 cursor-pointer font-bold t text-lg text-blue-700 `}>
+           {/* {admin === 'hazemsaad231@gmail.com' ? <li><Link to="booking"><LuCalendarCheck className='text-2xl'/> <span className='bg-red-600 text-sm text-white rounded-full relative bottom-10 left-1 p-1'>{orderCount}</span></Link></li>:null} */}
+            <li><Link to="home">Home</Link></li>
+            <li><Link to="allcars">Book a car</Link></li>
+            <li><Link to="offers">Rent a Car</Link></li>
+            {admin === 'hazemsaad231@gmail.com' ? <li><Link to="booking">Manage Cars</Link></li>:<li><a href='#contact'>Contact Us</a></li>
+            }
+            <li><Close/></li>
           
            </ul>
+</div>
+          
         
 
         </div>
     );    
 };    
 export default Navbar
+

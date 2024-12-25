@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Home from '../Home/Home'
 import Navbar from '../navbar/navbar'
+import Footer from '../footer/footer'
 
 const Master = () => {
 
@@ -9,6 +10,7 @@ const Master = () => {
         <div className='text-center'>
             <Navbar/>
             <Outlet/>
+            <Footer/>
         </div>
     )
 }

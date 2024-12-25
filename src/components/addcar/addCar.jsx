@@ -1,17 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 import { db, collection, addDoc } from "../firebase/firebase";
-import { useNavigate, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import { doc, updateDoc } from "firebase/firestore";
 import { getDoc } from "firebase/firestore";
 import { toast, ToastContainer } from "react-toastify";
-
+import { Context}  from "../Context/Context";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const AddCar = () => {
   const { id } = useParams();
-  const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm();
-  const navigate = useNavigate();
-
+  const { register, handleSubmit,setValue, formState: { errors } } = useForm();
+ const navigate = useNavigate()
+ const{isDarkMode} = useContext(Context);
   useEffect(() => {
     const fetchCarData = async () => {
       if (id) {
@@ -52,34 +55,37 @@ const AddCar = () => {
       if (id) {
         const docRef = doc(db, "cars", id);
         await updateDoc(docRef, formattedData);
-        toast.success("Car data updated successfully!");
-        console.log("Car data updated successfully!");
-        setTimeout(() => {
-          navigate('/home/allcars');
-        }, 2000);
+          navigate("/home/allcars",{state:{message:"Car data updated successfully!"}});
+      
       } else {
         await addDoc(collection(db, "cars"), formattedData);
         console.log("Car data added successfully!");
-        toast.success("Car added successfully!");
-        setTimeout(() => {
-          navigate("/home/allcars");
-        }, 2000);
+          navigate("/home/allcars",{state:{message:"Car data added successfully!"}});
+      
       }
     } catch (error) {
       console.error("Error saving car data: ", error);
     }
   };
 
+ useEffect(() => {
+      Aos.init({
+        duration: 1000,  // مدة التأثير
+        once: true,  // التأثير يتم مرة واحدة فقط عند التمرير
+      });
+    }, []);
+
+
   return (
     <>
       <ToastContainer />
-      <div>
-      <div className="shadow-2xl w-max m-auto mt-10">
-        <h2 className="text-xl text-center font-serif tracking-wider">
+      <div data-aos="zoom-in">
+      <div className={`shadow-xl border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} p-5  w-[90%] sm:w-[90%] md:w-max lg:w-max m-auto mt-10 `} >
+        <h2 className="text-xl text-center font-serif tracking-[4px]">
           {id ? "Update Car" : "Add a New Car"}
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="w-max p-10 m-auto font-serif text-gray-500">
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
             <div className="flex flex-col">
               <label className="text-start">Car Name</label>
               <input
@@ -180,7 +186,16 @@ const AddCar = () => {
           {errors.Horsepower && <p className = "text-red-400 text-sm">{errors.Horsepower.message}</p>}
         </div>
 
-        
+        <div className = 'flex flex-col'>
+          <label className = 'text-start'>IsBooked</label>
+          <input
+            type="text"
+            className="w-60 h-11 m-auto border rounded outline-blue-500 font-sans"
+            {...register("isBooked", { required: "IsBooked is required" })}
+          />
+          {errors.isBooked && <p className = "text-red-400 text-sm">{errors.isBooked.message}</p>}
+        </div>
+
 
         <div className = 'flex flex-col'>
           <label className = 'text-start'>evaluation</label>
@@ -202,10 +217,6 @@ const AddCar = () => {
           />
           {errors.reviews && <p className = "text-red-400 text-sm">{errors.reviews.message}</p>}
         </div>
-
-
-
-
 
 
 
