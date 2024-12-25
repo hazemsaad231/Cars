@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import view from "../../assets/img/view.mp4";
 import { Link } from "react-router-dom";
-import Loader from "../load/Load";
+import Loader from "../load/load";
 
 const Details = () => {
   const { id } = useParams();
