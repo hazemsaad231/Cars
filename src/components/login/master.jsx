@@ -2,12 +2,12 @@ import { Outlet } from 'react-router-dom'
 import Home from '../Home/Home'
 import Navbar from '../navbar/navbar'
 import Footer from '../footer/footer'
-
+import color from '../../assets/img/color.png'
 const Master = () => {
 
 
     return (
-        <div className='text-center'>
+        <div className='text-center' style={{ backgroundImage: `url(${color})` }}>
             <Navbar/>
             <Outlet/>
             <Footer/>
@@ -16,3 +16,6 @@ const Master = () => {
 }
 
 export default Master
+
+
+
