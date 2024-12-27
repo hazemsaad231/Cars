@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import Slider from "react-slick";
-
+import { useContext} from 'react';
+import { Context } from '../context/context';
 
 const Five = () => {
 
@@ -17,6 +18,7 @@ const Five = () => {
         });
       }, []);
 
+     const { isDarkMode} = useContext(Context)
 
       const settings = {
         dots: true,
@@ -45,7 +47,7 @@ const Five = () => {
     <div key={item.id}>
 
 
-<div className='flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row gap-2 rounded-xl shadow-lg border m-10'>
+<div className={`flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row gap-2 rounded-xl shadow-lg ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} m-10`}>
 <div className='h-80'>
     <img src={item.image} alt="image" className='w-full h-full object-cover m-auto  rounded-l-lg'  />
 </div>
@@ -63,7 +65,7 @@ const Five = () => {
                         />
                     ))}
         </div>
-        <p  className='font-serif w-48 h-44 p-2 text-center m-auto '>{item.discription}</p>
+        <p  className='font-serif w-48 h-44 p-2 mb-2 text-center m-auto '>{item.discription}</p>
 
         <br />
 

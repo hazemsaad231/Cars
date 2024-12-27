@@ -8,13 +8,13 @@ import { FaUserAlt } from "react-icons/fa";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import { useContext} from 'react';
-import { Context } from '../Context/Context';
+import { Context } from '../context/context';
 const Two = () => {
 
 
     const [data,setData] = useState([])
     const [value,setValue] = useState('')
-     const { isDarkMode} = useContext(Context);
+     const { isDarkMode} = useContext(Context)
     useEffect(() => {
       Aos.init({
         duration: 1000,  // مدة التأثير
