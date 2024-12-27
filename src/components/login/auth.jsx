@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import Image from "./Image"
+import Image from "./image"
 
 
 const Auth = () => {

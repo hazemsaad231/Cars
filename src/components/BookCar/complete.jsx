@@ -1,7 +1,7 @@
 import { GrCompliance } from "react-icons/gr";
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
-import { Context } from "../Context/Context";
+import { Context } from "../context/context";
 const Complete = () => {
 
   const { isDarkMode } = useContext(Context);
