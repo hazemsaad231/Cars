@@ -31,12 +31,11 @@ const Four = () => {
   <div className='flex flex-col gap-3'>
   <div className='flex gap-2 mx-2'> <img src={yser} alt="user"/> <div><h1 className='text-lg font-semibold text-start'>Best price guaranteed</h1>  <p className='font-serif text-gray-500 text-start'>Find a lower price? Well refund you 100%.</p></div> </div>
   <div className='flex gap-2 mx-2'> <img src={message} alt="doors"/> <div><h1 className='text-lg font-semibold text-start'>24 hour car delivery </h1>  <p className='font-serif text-gray-500 text-start'>Book your car anytime and we will deliver it.</p></div>   </div>
-  <div className='flex gap-2 mx-2'> <img src={chat} alt="air"/> <div><h1 className='text-lg font-semibold text-start'>Best price guaranteed </h1>  <p className='font-serif text-gray-500 text-start '>Find a lower price? Well refund you 100% of the difference.</p></div></div>
-  <div className='flex gap-2 mx-2'> <img src={yser} alt="frame"/> <div><h1 className='text-lg font-semibold text-start'>24/7 technical support</h1>  <p className='font-serif text-gray-500 text-start '>Have a question? Contact Rentcars support any time.</p></div>  </div>
+  <div className='flex gap-2 mx-2'> <img src={chat} alt="frame"/> <div><h1 className='text-lg font-semibold text-start'>24/7 technical support</h1>  <p className='font-serif text-gray-500 text-start '>Have a question? Contact Rentcars support any time.</p></div>  </div>
   </div>
   </div> 
   <div className='mt-20'>
-   <video src={newImage} autoPlay loop muted  disablePictureInPicture className='' data-aos ="zoom-in" ></video>
+   <video src={newImage} autoPlay loop muted  disablePictureInPicture className='rounded-full' data-aos ="zoom-in" ></video>
 </div>
 </div>
        

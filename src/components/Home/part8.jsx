@@ -29,15 +29,17 @@ const Brand = () => {
 
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 place-items-center gap-12 w-[90%] m-auto cursor-pointer">
 
-                <div className="border border-gray-300 rounded-lg p-6 bg-blue-100 hover:bg-transparent hover:scale-125"> <SiToyota size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-6 bg-blue-100 hover:bg-transparent hover:scale-125"> <SiFord size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-6 bg-blue-100 hover:bg-transparent hover:scale-125"> <SiJeep size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-6 bg-blue-100 hover:bg-transparent hover:scale-125"> <SiHyundai size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-6 bg-blue-100 hover:bg-transparent hover:scale-125"> <SiKia size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-6 bg-blue-100 hover:bg-transparent hover:scale-125"> <SiMercedes size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-6 bg-blue-100 hover:bg-transparent hover:scale-125"> <SiBmw size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-6 bg-blue-100 hover:bg-transparent hover:scale-125"> <SiMaserati size={100} className=' text-blue-700 m-auto' /></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent hover:bg-blue-100 hover:scale-125"> <SiJeep size={100} className=' text-blue-700 m-auto' /></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent hover:bg-blue-100 hover:scale-125"> <SiFord size={100} className=' text-blue-700 m-auto' /></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent hover:bg-blue-100 hover:scale-125"> <SiHyundai size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent hover:bg-blue-100 hover:scale-125"> <SiKia size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent hover:bg-blue-100 hover:scale-125"> <SiMercedes size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent hover:bg-blue-100 hover:scale-125"> <SiBmw size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent hover:bg-blue-100 hover:scale-125"> <SiMaserati size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent hover:bg-blue-100 hover:scale-125"> <SiToyota size={100} className=' text-blue-700 m-auto'/></div>
 
+
+               
             
             </div>
         </div>

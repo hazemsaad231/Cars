@@ -81,7 +81,7 @@ const AddRent = () => {
   return (
     <>
       <ToastContainer />
-      <div data-aos="zoom-in">
+      <div data-aos="zoom-in" className="text-start">
       <div className={`shadow-xl border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} p-5  w-[90%] sm:w-[90%] md:w-max lg:w-max m-auto mt-10 `} >
         <h2 className="text-xl text-center font-serif tracking-[4px]">
           {id ? "Update Car" : "Add a New Car"}
@@ -142,9 +142,11 @@ const AddRent = () => {
         </div>
 
           </div>
+          <div className="flex justify-center">
           <button type="submit" className="bg-blue-600 text-white p-2 rounded-lg mt-4">
             {id ? "Update Car" : "Add Car"}
           </button>
+          </div>
         </form>
       </div></div>
     </>

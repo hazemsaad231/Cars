@@ -61,8 +61,8 @@ const Two = () => {
 
     <div>
 <h2 className='text-2xl font-bold mt-20 text-blue-700 tracking-[4px]' style={{fontFamily:"arial"}}>Most Popular Cars</h2>
-<div className='mt-10'>
-    <input type="text" placeholder='Search' className='w-[65%] h-[4vh] mt-4 shadow-2xl border-2 border-gray-300 p-1  rounded-l-lg outline-blue-400' value={value} onChange={(e)=>setValue(e.target.value)}/>
+<div className='mt-10 text-gray-500'>
+    <input type="text" placeholder='Search' className='w-[65%] h-[4vh] mt-4 shadow-2xl border-2 border-gray-500 p-1 rounded-l-lg outline-blue-400' value={value} onChange={(e)=>setValue(e.target.value)}/>
     <button className='bg-blue-800 text-white h-[4vh] rounded-r-lg w-[16vw]'>search</button>
     </div>
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-[80%] m-auto mt-5  gap-4  place-items-center'>
@@ -70,7 +70,7 @@ const Two = () => {
     {search().map((el)=>(
  <div key={el.id} className={`flex flex-col text-center ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} mb-4 shadow-xl gap-2 justify-center rounded-t-xl`} data-aos="zoom-out">
 
- <img src={el.img[0]} alt="image" className='w-full h-60 m-auto mb-5 rounded-t-xl hover:scale-110 shadow-xl' />
+ <img src={el.img[0]} alt="image" className='w-full h-60 m-auto mb-5 rounded-t-xl shadow-xl' />
  <h2 className='text-start font-medium text-2xl mt-2 ml-6 mb-2 h-16'>{el.car}</h2>
 
  <div className='flex gap-.5 px-3'> 
@@ -109,9 +109,6 @@ const Two = () => {
      <h5 className='font-bold'>{el.price}</h5>
  </div>
  <br />
- {/* {role === 'hazemsaad231@gmail.com'? null : 
- <button className='bg-blue-700 w-max m-auto rounded-lg p-3 mb-2 hover:bg-blue-800 text-white'><Link to={`/home/details/${el.Id}`}>view details</Link></button>
- } */}
  </div>
     ))}
     

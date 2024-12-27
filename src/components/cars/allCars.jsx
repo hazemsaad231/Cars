@@ -139,7 +139,7 @@ const AllCars = () => {
               
             
         {
-          role === "hazemsaad231@gmail.com" && (
+          role === "as6463275@gmail.com" || role === "hazemsaad231@gmail.com" && (
             <div className="flex flex-col justify-center items-center" style={{fontFamily: 'arial'}}>
                             <button className="text-white w-52 text-xl h-10 mt-6 bg-blue-600 text-center rounded-lg hover:bg-blue-700"><Link to={"/home/addCar"}>add new car</Link></button>
                             <h1 className="text-xl font-semibold text-blue-700 tracking-tighter">count or cars : {cars.length} </h1> 
@@ -197,7 +197,7 @@ const AllCars = () => {
                   <h5 className='font-bold'>{el.price}$</h5>
                 </div>
                 <br />
-                {role !== 'hazemsaad231@gmail.com' ? (
+                {role !== 'as6463275@gmail.com' && role !== 'hazemsaad231@gmail.com' ? (
                   <button className='bg-blue-700 w-max m-auto rounded-lg p-3 mb-3 hover:bg-blue-800 text-white'>
                   {el.isBooked === true ? < HiOutlineLockClosed size={25} color="white" className="w-20" /> :
                     <Link to={`/home/details/${el.id}`}>view details</Link>}

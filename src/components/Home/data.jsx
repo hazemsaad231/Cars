@@ -18,7 +18,7 @@ const Names = [
     {
         id: 1,
         name: "Hazem mahisin",
-        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium interior features",
+        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium .",
         date: "Last updated 10 mins ago",
         image:boy4,
         num:5,
@@ -46,7 +46,7 @@ const Names = [
     {
         id: 4,
         name: "Ahmed mohraum",
-        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium interior features",
+        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium.",
         date: "Last updated 20 mins ago",
         image:boy3,
         num:4,
@@ -61,15 +61,6 @@ const Names = [
         image:girl1,
         num:5,
         star:[star,star,star,star,star]
-    },
-    {
-        id: 6,
-        name: "Ahmed mohraum",
-        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium interior features",
-        date: "Last updated 20 mins ago",
-        image:boy3,
-        num:4,
-        star:[star,star,star,star]
     }
 
    

@@ -79,12 +79,12 @@ const RentCar = () => {
         <h1 className='font-bold text-2xl mt-16 mb-16 text-blue-700 tracking-[2px]' style={{fontFamily:"arial"}}>the most popular cars rental offers</h1>
 
         {
-          role === "hazemsaad231@gmail.com" && (
+          role === "as6463275@gmail.com" || role === "hazemsaad231@gmail.com" ? (
             < div className="flex flex-col gap-4 justify-center mb-8" style={{fontFamily:"arial"}}>
                 <Link to="/home/addRent" className="text-white py-2 px-4 rounded-md font-semibold text-md bg-blue-700 w-max m-auto">Add Car</Link>
                <h1 className="text-xl font-semibold text-blue-700" style={{fontFamily:"arial"}}>count or cars : {cars.length} </h1>
              </div>
-       ) }
+       ):(null)}
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 place-items-center gap-12 m-auto w-[100%]" >
@@ -103,7 +103,7 @@ const RentCar = () => {
 
                     </div>
                     <div className='flex justify-center mt-4'>
-                          {role !== 'hazemsaad231@gmail.com' ? 
+                          {role !== 'hazemsaad231@gmail.com' && role !== 'as6463275@gmail.com' ? 
                                           (<button className='bg-blue-700 w-max m-auto rounded-lg p-3 mb-3 hover:bg-blue-800 text-white'>
                                            <Link to={`/home/rent/${item.id}`}>Rent Now</Link>
                                           </button>

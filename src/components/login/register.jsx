@@ -54,20 +54,20 @@ export default function Register() {
     <>
     <ToastContainer />
       <div className="flex flex-col justify-center">
-      <div className='w-[100%] m-auto sm:w-[100%] md:w-max lg:w-max xl:w-max border py-4 px-10 rounded-lg shadow-2xl bg-gradient-to-t from-blue-50 to-transparent'>
-          <div className="p-6">
+      <div className='w-[100%] m-auto sm:w-[100%] md:w-max lg:w-max xl:w-max border py-4 px-10 sm:px-10 md:px-10 lg:px-16 xl:px-16 rounded-lg shadow-2xl bg-gradient-to-t from-blue-50 to-transparent'>
+          <div className="p-2">
             <IoCarSport className="w-20 h-20 m-auto text-black" />
 
             <h3 className="text-gray-800 text-lg text-start">
               Create new account
             </h3>
-            <h1 className="font-bold text-2xl mb-4">Register</h1>
+            <h1 className="font-bold text-2xl mb-3">Register</h1>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <Box
               sx={{
-                "& > :not(style)": { my : 2, width: "26ch"  },
+                "& > :not(style)": { my : 2, width: "27ch"  },
               }}
               noValidate
               autoComplete="off"

@@ -69,7 +69,7 @@ const isLoginIn = true
     <>
     <ToastContainer/>
       <div className=' flex flex-col justify-center items-center my-8'>
- <div className='w-[100%] sm:w-[100%] md:w-max lg:w-max xl:w-max border px-8 py-10 rounded-lg shadow-2xl bg-gradient-to-t from-blue-50 to-transparent'>
+ <div className='w-[100%] sm:w-[100%] md:w-max lg:w-max xl:w-max border px-8 sm:px-8 md:px-12 lg:px-16 xl:px-16 py-10 rounded-lg shadow-2xl bg-gradient-to-t from-blue-50 to-transparent'>
           <div className="p-6">
             <IoCarSport className="w-20 h-20 m-auto text-black" />  
           </div>

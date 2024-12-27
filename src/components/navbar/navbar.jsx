@@ -55,8 +55,8 @@ const Navbar = () => {
           className="fixed inset-0 bg-black bg-opacity-95 flex flex-col  items-center justify-center gap-20 z-50"
         data-aos = "zoom-out">
           <ul className="text-center flex flex-col gap-20 font-bold text-2xl text-blue-700">
-            <li className=''>
-              <Link to="home" onClick={toggleNavbar}>
+            <li>
+              <Link to="home" onClick={toggleNavbar} >
                 Home
               </Link>
             </li>
@@ -70,7 +70,7 @@ const Navbar = () => {
                 Rent a Car
               </Link>
             </li>
-            {admin === 'hazemsaad231@gmail.com' ? <li><Link to="booking" onClick={toggleNavbar}>Manage Cars</Link></li>:<li><a href='#contact' onClick={toggleNavbar}>Contact Us</a></li>
+            {admin ==='as6463275@gmail.com'|| admin ==='hazemsaad231@gmail.com' ? <li><Link to="booking" onClick={toggleNavbar}>Manage Cars</Link></li>:<li><a href='#contact' onClick={toggleNavbar}>Contact Us</a></li>
             }
             <li><Close/></li>
           
@@ -92,7 +92,7 @@ const Navbar = () => {
             <li ><Link to="home" className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300'>Home</Link></li>
             <li ><Link to="allcars" className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300'>Book a car</Link></li>
             <li  ><Link to="offers" className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300' >Rent a Car</Link></li>
-            {admin === 'hazemsaad231@gmail.com' ? 
+            {admin === 'as6463275@gmail.com'|| admin ==='hazemsaad231@gmail.com' ? 
             <li><Link to="booking" className='border-b-2 border-l-2 rounded-xl hover:border-blue-800 px-2 text-blue-700 border-transparent transition duration-300'>Manage Cars</Link></li>
               :<li ><a href='#contact' className='border-b-2 border-l-2 rounded-xl hover:border-blue-800 px-2 text-blue-700 border-transparent transition duration-300'>Contact Us</a></li>
             }
