@@ -54,7 +54,7 @@ export default function Register() {
     <>
     <ToastContainer />
       <div className="flex flex-col justify-center">
-      <div className='w-[90%] m-auto sm:w-[90%] md:w-max lg:w-max xl:w-max border p-8 rounded-lg shadow-3xl bg-transparent'>
+      <div className='w-[100%] m-auto sm:w-[100%] md:w-max lg:w-max xl:w-max border py-4 px-10 rounded-lg shadow-2xl bg-gradient-to-t from-blue-50 to-transparent'>
           <div className="p-6">
             <IoCarSport className="w-20 h-20 m-auto text-black" />
 
@@ -67,19 +67,19 @@ export default function Register() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <Box
               sx={{
-                "& > :not(style)": { m: 2, width: "28ch" },
+                "& > :not(style)": { my : 2, width: "26ch"  },
               }}
               noValidate
               autoComplete="off"
             >
-              <div className="flex gap-3 ">
+              <div className="flex gap-2">
                 <div>
                   <TextField
                     id="outlined-basic"
                     label="firstName"
                     variant="outlined"
                     {...register("first_name", { required: true })}
-                    className="bg-transparent"
+                    className="bg-transparent shadow-xl"
                   />
                   {errors.first_name && (
                     <span className="text-red-400 text-start text-sm">
@@ -94,7 +94,7 @@ export default function Register() {
                     label="lastName"
                     variant="outlined"
                     {...register("last_name", { required: true })}
-                    className="bg-transparent"
+                    className="bg-transparent shadow-xl"
                   />
                   {errors.last_name && (
                     <span className="text-red-400 text-start text-sm">
@@ -104,7 +104,7 @@ export default function Register() {
                 </div>
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col justify-center">
                 <TextField
                   id="outlined-basic"
                   label="Email"
@@ -116,7 +116,7 @@ export default function Register() {
                       message: "Please enter a valid email",
                     },
                   })}
-                  className="bg-transparent"
+                  className="bg-transparent shadow-xl"
                 />
                 {errors.email && (
                   <span className="text-red-400 text-start text-sm">
@@ -124,14 +124,14 @@ export default function Register() {
                   </span>
                 )}
 
-                <div className="mt-4 flex flex-col">
+                <div className="mt-4 flex flex-col justify-center">
                   <TextField
                     id="outlined-basic"
                     label="Password"
                     type="password"
                     variant="outlined"
                     {...register("password", { required: "Password is required" })}
-                    className="bg-transparent"
+                    className="bg-transparent shadow-xl"
                   />
                   {errors.password && (
                     <span className="text-red-400 text-start text-sm">
@@ -148,7 +148,7 @@ export default function Register() {
                     type="password"
                     variant="outlined"
                     {...register("confirm_password", { required: "confirm password is required" })}
-                    className="bg-transparent"
+                    className="bg-transparent shadow-xl"
                   />
                   {errors.password && (
                     <span className="text-red-400 text-start text-sm">
@@ -162,7 +162,7 @@ export default function Register() {
               </div>
             </Box>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col justify-center gap-2">
               <button
                 type="submit"
                 className="bg-black text-white p-2 rounded-lg mt-4"

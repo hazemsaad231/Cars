@@ -60,7 +60,7 @@ const Two = () => {
    
 
     <div>
-<h2 className='text-2xl font-bold mt-20 text-blue-700 tracking-[4px]' style={{fontFamily:"cursive"}}>Most Popular Cars</h2>
+<h2 className='text-2xl font-bold mt-20 text-blue-700 tracking-[4px]' style={{fontFamily:"arial"}}>Most Popular Cars</h2>
 <div className='mt-10'>
     <input type="text" placeholder='Search' className='w-[65%] h-[4vh] mt-4 shadow-2xl border-2 border-gray-300 p-1  rounded-l-lg outline-blue-400' value={value} onChange={(e)=>setValue(e.target.value)}/>
     <button className='bg-blue-800 text-white h-[4vh] rounded-r-lg w-[16vw]'>search</button>
@@ -120,7 +120,7 @@ const Two = () => {
   
     <div className='text-start flex justify-center mt-16'> 
      
-    <button className='m-auto border-2 border-blue-800 text-xl text-blue-700 h-[4vh] rounded-lg px-6 hover:bg-blue-800 hover:text-white'><Link to={'/home/allcars'}> Show All Cars</Link></button>
+    <button className='m-auto border-2 border-blue-800 text-xl text-blue-700 rounded-lg px-6 hover:bg-blue-800 hover:text-white'><Link to={'/home/allcars'}> Show All Cars</Link></button>
     
   </div>
   </div>

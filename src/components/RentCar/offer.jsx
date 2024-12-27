@@ -76,13 +76,13 @@ const RentCar = () => {
         <div>
 
  <div>
-        <h1 className='font-bold text-2xl mt-16 mb-16 text-blue-700 tracking-[2px]' style={{fontFamily: "cursive"}}>the most popular cars rental offers</h1>
+        <h1 className='font-bold text-2xl mt-16 mb-16 text-blue-700 tracking-[2px]' style={{fontFamily:"arial"}}>the most popular cars rental offers</h1>
 
         {
           role === "hazemsaad231@gmail.com" && (
-            < div className="flex flex-col gap-4 justify-center mb-8" style={{fontFamily: "cursive"}}>
+            < div className="flex flex-col gap-4 justify-center mb-8" style={{fontFamily:"arial"}}>
                 <Link to="/home/addRent" className="text-white py-2 px-4 rounded-md font-semibold text-md bg-blue-700 w-max m-auto">Add Car</Link>
-               <h1 className="text-xl font-semibold text-blue-700" style={{fontFamily: "cursive"}}>count or cars : {cars.length} </h1>
+               <h1 className="text-xl font-semibold text-blue-700" style={{fontFamily:"arial"}}>count or cars : {cars.length} </h1>
              </div>
        ) }
 

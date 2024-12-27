@@ -115,7 +115,7 @@ const AllCars = () => {
 
 
         <div>
-  <h2 className='text-2xl text-blue-700 font-bold p-8 tracking-[2px]' style={{fontFamily: 'cursive'}}>The popular cars booking offers</h2><div className='mt-10'>
+  <h2 className='text-2xl text-blue-700 font-bold p-8 tracking-[2px]' style={{fontFamily: 'arial'}}>The popular cars booking offers</h2><div className='mt-10'>
                 {/* حقل البحث */}
                 <input
                   type="text"
@@ -140,7 +140,7 @@ const AllCars = () => {
             
         {
           role === "hazemsaad231@gmail.com" && (
-            <div className="flex flex-col justify-center items-center" style={{fontFamily: 'cursive'}}>
+            <div className="flex flex-col justify-center items-center" style={{fontFamily: 'arial'}}>
                             <button className="text-white w-52 text-xl h-10 mt-6 bg-blue-600 text-center rounded-lg hover:bg-blue-700"><Link to={"/home/addCar"}>add new car</Link></button>
                             <h1 className="text-xl font-semibold text-blue-700 tracking-tighter">count or cars : {cars.length} </h1> 
 

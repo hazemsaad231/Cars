@@ -6,7 +6,7 @@ const Sex = () => {
     return (
    <>
    
-   <div className='mt-16 ml-16 text-start' data-aos="zoom-in" style={{ fontFamily: "cursive" }}>
+   <div className='mt-16 ml-16 text-start' data-aos="zoom-in" style={{ fontFamily: "arial" }}>
         <h1 className='font-semibold text-4xl mb-3'> Download Rentcars App for <span className='text-blue-700'>FREE</span> </h1>
         <p className='text-gray-500 text-sm'>For faster, easier booking and exclusive deals.</p>
         <div>

@@ -19,7 +19,7 @@ const Three = () => {
 
     return (
         <>
-        <div style={{ fontFamily: "cursive" }}>
+        <div style={{ fontFamily: "arial" }}>
         <h1 className='font-bold text-2xl mt-16 mb-16 text-blue-700 tracking-[2px]' >Our special car rental offers</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 place-items-center m-auto">
  {Rent.map((item) => (
@@ -36,12 +36,6 @@ const Three = () => {
                         <h1 className='font-semibold text-blue-700'>${item.newPrice}</h1>
 
                     </div>
-                    {/* {role === 'hazemsaad231@gmail.com'? null : 
-
-                    <div className='flex justify-center mt-4'>
-                        <button className=' border-2 border-blue-700 w-max px-4 py-1 text-center text-blue-700 rounded-lg hover:bg-blue-600 hover:text-white m-auto mb-4'><Link to={'/home/offers'}>Rent Now</Link></button>
-                    </div>
-                    } */}
                 </div>
 </div>
              

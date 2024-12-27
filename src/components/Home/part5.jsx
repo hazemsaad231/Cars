@@ -24,7 +24,7 @@ const Five = () => {
 
         <>
 
-<h1 className='font-semibold text-4xl mt-24 mb-10' style={{ fontFamily: "cursive" }}> <span className='text-blue-700'>Tweets</span> of some users</h1>
+<h1 className='font-semibold text-4xl mt-24 mb-10' style={{ fontFamily: "arial" }}> <span className='text-blue-700'>Tweets</span> of some users</h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>
 
 {Names.map((item) => (

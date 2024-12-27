@@ -5,7 +5,6 @@ import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { useContext} from 'react';
 import { Context } from '../Context/Context';
-import { LuCalendarCheck } from "react-icons/lu";
 import  { useState, useEffect } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -37,7 +36,7 @@ const Navbar = () => {
   };
 
     return (
-        <div className="flex flex-row justify-between w-[100%] px-10" style={{fontFamily: 'cursive'}}>
+        <div className="flex flex-row justify-between w-[100%] px-10" style={{ fontFamily: "arial" }}>
 
 <div className='flex flex-row mr-20 mt-5 gap-4'>
         <img src={logo} alt="logo" className='w-10 h-10' id='logo'/> 
@@ -56,7 +55,7 @@ const Navbar = () => {
           className="fixed inset-0 bg-black bg-opacity-95 flex flex-col  items-center justify-center gap-20 z-50"
         data-aos = "zoom-out">
           <ul className="text-center flex flex-col gap-20 font-bold text-2xl text-blue-700">
-            <li>
+            <li className=''>
               <Link to="home" onClick={toggleNavbar}>
                 Home
               </Link>
@@ -89,12 +88,13 @@ const Navbar = () => {
         </div>
 
 <div className='hidden sm:block md:block lg:block xl:block'>
-<ul className={`flex gap-6 justify-center m-6 cursor-pointer font-bold t text-lg text-blue-700 `}>
-           {/* {admin === 'hazemsaad231@gmail.com' ? <li><Link to="booking"><LuCalendarCheck className='text-2xl'/> <span className='bg-red-600 text-sm text-white rounded-full relative bottom-10 left-1 p-1'>{orderCount}</span></Link></li>:null} */}
-            <li><Link to="home">Home</Link></li>
-            <li><Link to="allcars">Book a car</Link></li>
-            <li><Link to="offers">Rent a Car</Link></li>
-            {admin === 'hazemsaad231@gmail.com' ? <li><Link to="booking">Manage Cars</Link></li>:<li><a href='#contact'>Contact Us</a></li>
+<ul className={`flex gap-3 justify-center m-6 cursor-pointer font-bold t text-lg text-blue-700 `}>
+            <li ><Link to="home" className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300'>Home</Link></li>
+            <li ><Link to="allcars" className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300'>Book a car</Link></li>
+            <li  ><Link to="offers" className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300' >Rent a Car</Link></li>
+            {admin === 'hazemsaad231@gmail.com' ? 
+            <li><Link to="booking" className='border-b-2 border-l-2 rounded-xl hover:border-blue-800 px-2 text-blue-700 border-transparent transition duration-300'>Manage Cars</Link></li>
+              :<li ><a href='#contact' className='border-b-2 border-l-2 rounded-xl hover:border-blue-800 px-2 text-blue-700 border-transparent transition duration-300'>Contact Us</a></li>
             }
             <li><Close/></li>
           

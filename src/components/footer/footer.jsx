@@ -5,7 +5,7 @@ import { IoCarSport } from "react-icons/io5";
 const Footer = () => {
   return (
     <div className='w-full bg-gradient-to-b from-gray-700 to-gray-900 flex justify-center mt-10' id='contact'>
-    <footer className="bg-gradient-to-b from-gray-700 to-gray-900 text-white py-10" style={{fontFamily:"cursive"}}>
+    <footer className="bg-gradient-to-b from-gray-700 to-gray-900 text-white py-10" style={{fontFamily:"arial"}}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
 
@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center mt-10">
-          <p>© 2024 My Website. All rights reserved.</p>
+          <p>© 2025 My Website. All rights reserved.</p>
         </div>
       </div>
     </footer>
