@@ -25,6 +25,9 @@ const Five = () => {
         infinite: true,
         speed: 700,
         slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
         slidesToScroll: 1,
         arrows: false,
         responsive: [
@@ -41,7 +44,7 @@ const Five = () => {
         <>
 
 <h1 className='font-semibold text-4xl mt-24 mb-10' style={{ fontFamily: "arial" }}> <span className='text-blue-700'>Tweets</span> of some users</h1>
-        <div className='my-4 w-full'>
+        <div className='my-4 w-full' data-aos="zoom-in">
         <Slider {...settings}>
 {Names.map((item) => (
     <div key={item.id}>
@@ -65,7 +68,7 @@ const Five = () => {
                         />
                     ))}
         </div>
-        <p  className='font-serif w-48 h-44 p-2 mb-2 text-center m-auto '>{item.discription}</p>
+        <p  className='font-serif w-48 h-48 p-2 text-center m-auto '>{item.discription}</p>
 
         <br />
 

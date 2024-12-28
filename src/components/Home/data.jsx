@@ -56,7 +56,7 @@ const Names = [
     {
         id: 5,
         name: "Aml",
-        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium interior features",
+        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium.",
         date: "Last updated 2 mins ago",
         image:girl1,
         num:5,
