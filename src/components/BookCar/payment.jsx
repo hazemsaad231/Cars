@@ -1,5 +1,5 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { Box, Button, Typography, Grid, TextField , FormControl, InputLabel, MenuItem, Select, Autocomplete} from '@mui/material';
+import { Box, Button, Typography, Grid, TextField , FormControl, InputLabel, MenuItem, Select} from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { db } from '../firebase/firebase';
@@ -8,6 +8,7 @@ import { collection, addDoc} from "firebase/firestore";
 import  {Context}  from '../context/context';
 import {useContext} from "react";
 import { useState } from 'react';
+import { t } from 'i18next';
 
 const options = [5000,10000,15000,20000]
   
@@ -35,7 +36,6 @@ const isBooked = localStorage.getItem("isBooked");
     event.preventDefault();
 
     if (!stripe || !elements) {
-      toast.error("Stripe لم يتم تحميله بعد. حاول مرة أخرى.");
       return;
     }
 
@@ -47,13 +47,10 @@ const isBooked = localStorage.getItem("isBooked");
     if (cardElement) {
       const { error, token } = await stripe.createToken(cardElement);
       setLoading(true);
-
-    
-     
-
       if (error) {
         toast.error(error.message);
-        return;
+      }else{
+        handleBook(carId, isBooked==="true"?true:false);
       }
 
         if (!Id) {
@@ -93,7 +90,8 @@ const isBooked = localStorage.getItem("isBooked");
             delivery_address: data.delivery_address,
             carDetails: data.carDetails,
             timestamp: new Date(),
-            carId:carId
+            carId:carId,
+          
           
           });
 
@@ -105,7 +103,6 @@ const isBooked = localStorage.getItem("isBooked");
           }, 4500);
         } catch (error) {
           console.error("error", error);
-          toast.error("Failed to add order. Please try again.");
         } 
       }
     } 
@@ -133,6 +130,7 @@ const isBooked = localStorage.getItem("isBooked");
                   name="fullName"
                   label="Full Name"
                   fullWidth
+                  variant='standard'
       
                   margin="normal"
                 />
@@ -150,6 +148,7 @@ const isBooked = localStorage.getItem("isBooked");
                   name="phone"
                   label="Phone" 
                   fullWidth
+                  variant='standard'
       
                   margin="normal"
                 />
@@ -167,8 +166,8 @@ const isBooked = localStorage.getItem("isBooked");
                   name="address"
                   label="Address"
                   fullWidth
-      
                   margin="normal"
+                  variant='standard'
                 />  
 
                 <TextField
@@ -177,20 +176,24 @@ const isBooked = localStorage.getItem("isBooked");
                   type="date"
                   variant='standard'
                   fullWidth
-        
                   margin="normal"
                 />
 
-                <Autocomplete
-                  name="PartialPayment"
-                  label="Partial Payment"
-                  fullWidth
-                  variant="standard"
-                  margin="normal"
-                  options={options}
-                  renderInput={(params) => <TextField {...params} label="Partial Payment" />}
-                  sx={{mt:2}}
-                />
+<FormControl fullWidth margin="normal">
+  <InputLabel id="partial-payment-label">Partial Payment</InputLabel>
+  <Select
+    name="PartialPayment"
+    labelId="partial-payment-label" // يربط InputLabel مع Select
+    defaultValue="" 
+    variant='standard'
+  >
+    {options.map((option) => (
+      <MenuItem key={option} value={option}>
+        {option}
+      </MenuItem>
+    ))}
+  </Select>
+</FormControl>
                
                 </div>
               </Grid>
@@ -219,9 +222,8 @@ const isBooked = localStorage.getItem("isBooked");
               fullWidth
               sx={{ m: 2, width: 200 , margin: "auto"}}
               disabled={!stripe}
-              onClick={()=> handleBook(carId,isBooked=== 'true'?true:false)}
               >
-             {loading ? "Processing..." : "PROCEED TO CHECKOUT"}
+             {loading ? "Processing...": "Pay Now"}
 
             </Button>
             

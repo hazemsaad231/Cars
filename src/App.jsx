@@ -16,6 +16,7 @@ import RentCar from './components/RentCar/offer'
 import RentDetails from './components/RentCar/rentDetails'
 import Bookings from './components/orders/bookings'
 import Footer from './components/footer/footer'
+import PrivateRoute from './components/login/protected'
 function App() {
  
 
@@ -40,7 +41,7 @@ function App() {
 
 {
   path: "/home",
-  element: <Master />,
+  element: <PrivateRoute> <Master /> </PrivateRoute>,
   errorElement: <div>Error</div>,
   children: [
     {index: true, element: <Home />},

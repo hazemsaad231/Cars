@@ -19,7 +19,7 @@ import DialogContent from '@mui/joy/DialogContent';
 import DialogActions from '@mui/joy/DialogActions';
 import Modal from '@mui/joy/Modal';
 import ModalDialog from '@mui/joy/ModalDialog';
-import Loader from "../load/Load";
+import Loader from "../load/load";
 import { useContext } from "react";
 import Rentings from './rentings';
 import { Context } from '../context/context';

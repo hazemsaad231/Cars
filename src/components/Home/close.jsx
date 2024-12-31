@@ -31,7 +31,9 @@ export default function Close() {
           </DialogContent>
           <DialogActions>
             <Button variant="solid" color="danger" onClick={() => setOpen(false)}>
-                <Link to="/login">log out</Link>
+                <Link to="/login"  onClick={()=>
+                    localStorage.removeItem('token')
+                  }  >log out</Link>
             </Button>
             <Button variant="plain" color="neutral" onClick={() => setOpen(false)}>
               Cancel

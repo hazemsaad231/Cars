@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
 
-function PrivateRoute({ children }:any) {
+function PrivateRoute({ children }) {
 
   const isLoggedIn = localStorage.getItem('token')==null;
 

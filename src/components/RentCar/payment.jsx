@@ -1,5 +1,5 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { Box, Button, Typography, Grid, TextField , Autocomplete} from '@mui/material';
+import { Box, Button, Typography, Grid, TextField, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { db } from '../firebase/firebase';
@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 
 
- const options = [25,50,75,100]
+ const options = [10,20,30,40]
 function Payment() {
 
   const stripe = useStripe();
@@ -26,7 +26,7 @@ console.log(carDetails);
     event.preventDefault();
 
     if (!stripe || !elements) {
-      toast.error("Stripe لم يتم تحميله بعد. حاول مرة أخرى.");
+      toast.error("not loaded stripe");
       return;
     }
 
@@ -125,6 +125,7 @@ console.log(carDetails);
         label="Full Name"
         fullWidth
         margin="normal"
+        variant='standard'
       />
 
       <TextField
@@ -140,6 +141,7 @@ console.log(carDetails);
         label="Phone"
         fullWidth
         margin="normal"
+        variant='standard'
       />
 
       <TextField
@@ -150,16 +152,21 @@ console.log(carDetails);
         margin="normal"
       />
 
-      <Autocomplete
-                  name="PartialPayment"
-                  label="Partial Payment"
-                  fullWidth
-                  variant="standard"
-                  margin="normal"
-                  options={options}
-                  renderInput={(params) => <TextField {...params} label="Partial Payment" />}
-                  sx={{mt:2}}
-           />
+<FormControl fullWidth margin="normal">
+  <InputLabel id="partial-payment-label">Partial Payment</InputLabel>
+  <Select
+    name="PartialPayment"
+    labelId="partial-payment-label" // يربط InputLabel مع Select
+    defaultValue=""
+     variant="standard"
+  >
+    {options.map((option) => (
+      <MenuItem key={option} value={option}>
+        {option}
+      </MenuItem>
+    ))}
+  </Select>
+</FormControl>
 
       <TextField
         name="address"
@@ -178,6 +185,7 @@ console.log(carDetails);
         type="date"
         fullWidth
         margin="normal"
+        variant='standard'
       />
 
       <TextField
@@ -236,3 +244,4 @@ console.log(carDetails);
 }
 
 export default Payment;
+
