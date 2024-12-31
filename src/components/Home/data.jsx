@@ -2,7 +2,8 @@ import boy from '../../assets/img/boy.jpg'
 import boy2 from '../../assets/img/boy2.jpg'
 import boy3 from '../../assets/img/boy3.jpg'
 import boy4 from '../../assets/img/boy4.jpg'
-import girl1 from '../../assets/img/girl1.jpg'
+import girl3 from '../../assets/img/girl3.jpg'
+import girl2 from '../../assets/img/girl2.jpg'
 import star from '../../../src/assets/img/star.png'
 import bmw from '../../../src/assets/img/Bmw.jpg'
 import audi from '../../../src/assets/img/audi.jpg'
@@ -17,7 +18,7 @@ const Names = [
     
     {
         id: 1,
-        name: "Hazem mahisin",
+        name: "Hazem Mahisin",
         discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium .",
         date: "Last updated 10 mins ago",
         image:boy4,
@@ -27,7 +28,7 @@ const Names = [
     
     
     {   id: 2,
-        name: "Ahmed sherif",
+        name: "Ahmed Sherif",
         discription: "An exhilarating driving experience! Outstanding performance, sleek design, and quick acceleration make this car a true thrill to drive.",
         date: "Last updated 3 mins ago", 
         image:boy,
@@ -45,8 +46,8 @@ const Names = [
     },
     {
         id: 4,
-        name: "Ahmed mohraum",
-        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium.",
+        name: "Ahmed Mohraum",
+        discription: "The experience was great, but I wish there were more options for luxury cars. The overall service is excellent!",
         date: "Last updated 20 mins ago",
         image:boy3,
         num:4,
@@ -55,13 +56,22 @@ const Names = [
    
     {
         id: 5,
-        name: "Aml",
-        discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium.",
+        name: "Aml Ahmed",
+        discription: "Best car rental experience! The cars are clean and modern, and the customer service was very helpful. I will definitely come back again",
         date: "Last updated 2 mins ago",
-        image:girl1,
+        image:girl3,
         num:5,
         star:[star,star,star,star,star]
-    }
+    },
+    {
+        id: 6,
+        name: "Heba Abdelallah",
+        discription: "Best site to buy used cars. Got a great deal, car is in excellent condition as described.",
+        date: "Last updated 2 mins ago",
+        image:girl2,
+        num:5,
+        star:[star,star,star,star,star]
+    },
 
    
 ];

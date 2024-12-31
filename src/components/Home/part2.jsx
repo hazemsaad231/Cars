@@ -37,7 +37,7 @@ const Two = () => {
             const carsList = querySnapshot.docs.map((doc) =>( {
               Id: doc.id,
               ...doc.data()}));
-              let cars = carsList.slice(0,4)
+              let cars = carsList.filter((item) => item.favourite === "yes").slice(0, 4);
             setData(cars);
             console.log(cars);
           

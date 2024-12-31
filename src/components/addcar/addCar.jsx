@@ -218,6 +218,14 @@ const AddCar = () => {
           {errors.reviews && <p className = "text-red-400 text-sm">{errors.reviews.message}</p>}
         </div>
 
+        <div className = 'flex flex-col'>
+          <label className = 'text-start'>favourite</label>
+          <input
+            type="text"
+            className="w-60 h-11 m-auto border rounded outline-blue-500 font-sans"
+            {...register("favourite")}
+          />
+        </div>
 
 
           </div>
