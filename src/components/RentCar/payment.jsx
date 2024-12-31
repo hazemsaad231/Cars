@@ -1,11 +1,15 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { Box, Button, Typography, Grid, TextField , FormControl, InputLabel, MenuItem, Select} from '@mui/material';
+import { Box, Button, Typography, Grid, TextField , Autocomplete} from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { db } from '../firebase/firebase';
 import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+
+
+
+ const options = [25,50,75,100]
 function Payment() {
 
   const stripe = useStripe();
@@ -120,7 +124,6 @@ console.log(carDetails);
         name="fullName"
         label="Full Name"
         fullWidth
-        variant="standard"
         margin="normal"
       />
 
@@ -136,7 +139,6 @@ console.log(carDetails);
         name="phone"
         label="Phone"
         fullWidth
-        variant="standard"
         margin="normal"
       />
 
@@ -148,6 +150,17 @@ console.log(carDetails);
         margin="normal"
       />
 
+      <Autocomplete
+                  name="PartialPayment"
+                  label="Partial Payment"
+                  fullWidth
+                  variant="standard"
+                  margin="normal"
+                  options={options}
+                  renderInput={(params) => <TextField {...params} label="Partial Payment" />}
+                  sx={{mt:2}}
+           />
+
       <TextField
         name="address"
         label="Address"
@@ -156,21 +169,14 @@ console.log(carDetails);
         margin="normal"
       />  
 
-  <TextField
-        name="PartialPayment"
-        label="Partial Payment"
-        type="text"
-        fullWidth
-        variant="standard"
-        margin="normal"
-      />
+  
+
 
       <TextField
         name="PickupDate"
         label="Pickup Date"
         type="date"
         fullWidth
-        variant="standard"
         margin="normal"
       />
 

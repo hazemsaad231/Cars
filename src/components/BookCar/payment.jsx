@@ -1,5 +1,5 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { Box, Button, Typography, Grid, TextField , FormControl, InputLabel, MenuItem, Select} from '@mui/material';
+import { Box, Button, Typography, Grid, TextField , FormControl, InputLabel, MenuItem, Select, Autocomplete} from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { db } from '../firebase/firebase';
@@ -8,6 +8,10 @@ import { collection, addDoc} from "firebase/firestore";
 import  {Context}  from '../context/context';
 import {useContext} from "react";
 import { useState } from 'react';
+
+const options = [5000,10000,15000,20000]
+  
+
 function Payment({carId}) {
 
   const stripe = useStripe();
@@ -129,15 +133,16 @@ const isBooked = localStorage.getItem("isBooked");
                   name="fullName"
                   label="Full Name"
                   fullWidth
-                  variant="standard"
+      
                   margin="normal"
                 />
 
                 <TextField
                   name="email"
                   label="Email"
+                  variant='standard'
                   fullWidth
-                  variant="standard"
+      
                   margin="normal"
                 />
 
@@ -145,15 +150,16 @@ const isBooked = localStorage.getItem("isBooked");
                   name="phone"
                   label="Phone" 
                   fullWidth
-                  variant="standard"
+      
                   margin="normal"
                 />
 
                 <TextField
                   name="city"
                   label="City"
+                  variant='standard'
                   fullWidth
-                  variant="standard"
+      
                   margin="normal"
                 />
 
@@ -161,7 +167,7 @@ const isBooked = localStorage.getItem("isBooked");
                   name="address"
                   label="Address"
                   fullWidth
-                  variant="standard"
+      
                   margin="normal"
                 />  
 
@@ -169,18 +175,23 @@ const isBooked = localStorage.getItem("isBooked");
                   name="ReceiptTime"
                   label="Receipt Time"
                   type="date"
+                  variant='standard'
                   fullWidth
-                  variant= 'standard'
+        
                   margin="normal"
                 />
-                <TextField
+
+                <Autocomplete
                   name="PartialPayment"
                   label="Partial Payment"
-                  type="text"
                   fullWidth
                   variant="standard"
                   margin="normal"
+                  options={options}
+                  renderInput={(params) => <TextField {...params} label="Partial Payment" />}
+                  sx={{mt:2}}
                 />
+               
                 </div>
               </Grid>
             </div>
