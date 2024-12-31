@@ -25,7 +25,7 @@ const Five = () => {
         infinite: true,
         speed: 700,
         slidesToShow: 3,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         pauseOnHover: true,
         slidesToScroll: 1,
@@ -52,7 +52,7 @@ const Five = () => {
 
 <div className={`flex flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row gap-2 rounded-xl shadow-lg ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} m-10`}>
 <div className='h-80'>
-    <img src={item.image} alt="image" className='w-80 h-80 object-cover m-auto  rounded-l-lg'  />
+    <img src={item.image} alt="image" className='w-96 h-80 object-cover m-auto  rounded-l-lg'  />
 </div>
 
 

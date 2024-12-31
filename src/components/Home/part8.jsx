@@ -29,14 +29,14 @@ const Brand = () => {
 
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 place-items-center gap-12 w-[90%] m-auto cursor-pointer">
 
-                <div className="border border-gray-300 rounded-lg p-4 bg-transparent"> <SiJeep size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-4 bg-transparent"> <SiFord size={100} className=' text-blue-700 m-auto' /></div>
-                <div className="border border-gray-300 rounded-lg p-4 bg-transparent"> <SiHyundai size={100} className=' text-blue-700 m-auto'/></div>
-                <div className="border border-gray-300 rounded-lg p-4 bg-transparent"> <SiKia size={100} className=' text-blue-700 m-auto'/></div>
-                <div className="border border-gray-300 rounded-lg p-4 bg-transparent"> <SiMercedes size={100} className=' text-blue-700 m-auto'/></div>
-                <div className="border border-gray-300 rounded-lg p-4 bg-transparent"> <SiBmw size={100} className=' text-blue-700 m-auto'/></div>
-                <div className="border border-gray-300 rounded-lg p-4 bg-transparent"> <SiMaserati size={100} className=' text-blue-700 m-auto'/></div>
-                <div className="border border-gray-300 rounded-lg p-4 bg-transparent"> <SiToyota size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent" id="btn"> <SiJeep size={100} className=' text-blue-700 m-auto' /></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent" id="btn"> <SiFord size={100} className=' text-blue-700 m-auto' /></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent" id="btn"> <SiHyundai size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent" id="btn"> <SiKia size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent" id="btn"> <SiMercedes size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent" id="btn"> <SiBmw size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent" id="btn"> <SiMaserati size={100} className=' text-blue-700 m-auto'/></div>
+                <div className="border border-gray-300 rounded-lg p-4 bg-transparent" id="btn"> <SiToyota size={100} className=' text-blue-700 m-auto'/></div>
 
 
                

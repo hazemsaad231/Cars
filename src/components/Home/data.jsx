@@ -2,6 +2,7 @@ import boy from '../../assets/img/boy.jpg'
 import boy2 from '../../assets/img/boy2.jpg'
 import boy3 from '../../assets/img/boy3.jpg'
 import boy4 from '../../assets/img/boy4.jpg'
+import boy6 from '../../assets/img/boy6.jpg'
 import girl3 from '../../assets/img/girl3.jpg'
 import girl2 from '../../assets/img/girl2.jpg'
 import star from '../../../src/assets/img/star.png'
@@ -17,7 +18,7 @@ import mercedes from '../../../src/assets/img/mercedes.jpg'
 const Names = [
     
     {
-        id: 1,
+        id: 0,
         name: "Hazem Mahisin",
         discription: "A versatile SUV that combines comfort with rugged capability! Great for road trips, off-road adventures, and family outings, with premium .",
         date: "Last updated 10 mins ago",
@@ -27,7 +28,7 @@ const Names = [
     },
     
     
-    {   id: 2,
+    {   id: 1,
         name: "Ahmed Sherif",
         discription: "An exhilarating driving experience! Outstanding performance, sleek design, and quick acceleration make this car a true thrill to drive.",
         date: "Last updated 3 mins ago", 
@@ -36,7 +37,7 @@ const Names = [
         star:[star,star,star,star]
     },
     {
-        id: 3,
+        id: 2,
         name: "Diaa Helmy",
         discription: "The perfect choice for families! Spacious interior, comfortable seating, and advanced safety features make it ideal for long trips with loved ones.",
         date: "Last updated 6 mins ago",
@@ -45,7 +46,7 @@ const Names = [
         star:[star,star,star,star,star]
     },
     {
-        id: 4,
+        id: 3,
         name: "Ahmed Mohraum",
         discription: "The experience was great, but I wish there were more options for luxury cars. The overall service is excellent!",
         date: "Last updated 20 mins ago",
@@ -55,7 +56,7 @@ const Names = [
     },
    
     {
-        id: 5,
+        id: 4,
         name: "Aml Ahmed",
         discription: "Best car rental experience! The cars are clean and modern, and the customer service was very helpful. I will definitely come back again",
         date: "Last updated 2 mins ago",
@@ -63,15 +64,26 @@ const Names = [
         num:5,
         star:[star,star,star,star,star]
     },
+
     {
-        id: 6,
-        name: "Heba Abdelallah",
-        discription: "Best site to buy used cars. Got a great deal, car is in excellent condition as described.",
+        id: 5,
+        name: "Heba Abdallah",
+        discription: "I had a great time with this car rental company! The cars were well-maintained and the staff was friendly and helpful. I will definitely come back again",
         date: "Last updated 2 mins ago",
         image:girl2,
         num:5,
         star:[star,star,star,star,star]
     },
+    {
+        id: 6,
+        name: "Moshamed Allam",
+        discription: "I recommend the site to everyone! I bought an economy car and it was a great experience from start to finish.",
+        date: "Last updated 7 mins ago",
+        image:boy6,
+        num:5,
+        star:[star,star,star,star,star]
+    },
+
 
    
 ];
