@@ -5,7 +5,7 @@ import { db } from "../firebase/firebase";
 import Payment from "./payment";
 import Loader from "../load/Load";
 import { useContext} from 'react';
-import { Context } from '../context/context';
+import { Context } from '../context/Context';
 const RentDetails = () => {
 
     const { id } = useParams();

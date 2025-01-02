@@ -5,12 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { db } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc} from "firebase/firestore";
-import  {Context}  from '../context/context';
+import  {Context}  from '../context/Context';
 import {useContext} from "react";
 import { useState } from 'react';
-import { t } from 'i18next';
-
-const options = [5000,10000,15000,20000]
   
 
 function Payment({carId}) {
@@ -179,21 +176,22 @@ const isBooked = localStorage.getItem("isBooked");
                   margin="normal"
                 />
 
-<FormControl fullWidth margin="normal">
-  <InputLabel id="partial-payment-label">Partial Payment</InputLabel>
-  <Select
-    name="PartialPayment"
-    labelId="partial-payment-label" // يربط InputLabel مع Select
-    defaultValue="" 
-    variant='standard'
-  >
-    {options.map((option) => (
-      <MenuItem key={option} value={option}>
-        {option}
-      </MenuItem>
-    ))}
-  </Select>
-</FormControl>
+<FormControl fullWidth margin="normal" variant='standard'>
+                  <InputLabel id="demo-simple-select-label">Payment Type</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    name="PartialPayment"
+                    label="Payment Type"
+                    className='text-start'
+                  >
+                    <MenuItem value="Full Payment">5,000</MenuItem>
+                    <MenuItem value="Partial Payment">10,000</MenuItem>
+                    <MenuItem value="Partial Payment">15,000</MenuItem>
+
+                  </Select>
+                </FormControl>
+
                
                 </div>
               </Grid>

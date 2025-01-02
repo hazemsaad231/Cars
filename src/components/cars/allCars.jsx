@@ -16,7 +16,7 @@ import Modal from '@mui/joy/Modal';
 import ModalDialog from '@mui/joy/ModalDialog';
 import Loader from "../load/Load";
 import { useContext} from 'react';
-import { Context } from '../Context/Context';
+import { Context } from '../context/Context';
 import { HiOutlineLockClosed } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 

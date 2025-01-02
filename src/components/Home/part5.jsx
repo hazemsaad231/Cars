@@ -5,7 +5,7 @@ import Aos from "aos";
 import 'aos/dist/aos.css';
 import Slider from "react-slick";
 import { useContext} from 'react';
-import { Context } from '../context/context';
+import { Context } from '../context/Context';
 
 const Five = () => {
 

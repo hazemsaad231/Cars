@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import Payment from "./payment";
-import Loader from "../load/Load";
-import { Context } from '../context/context';
+import Loader from "../load/load";
+import { Context } from '../context/Context';
 import { useContext } from "react";
 
 const BuyDetails = () => {

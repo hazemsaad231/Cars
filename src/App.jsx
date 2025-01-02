@@ -17,6 +17,7 @@ import RentDetails from './components/RentCar/rentDetails'
 import Bookings from './components/orders/bookings'
 import Footer from './components/footer/footer'
 import PrivateRoute from './components/login/protected'
+import Reservations from './components/myReservations/reservations'
 function App() {
  
 
@@ -58,6 +59,8 @@ function App() {
     {path: "offers", element: <RentCar/>},
     {path: "rent/:id", element: <RentDetails/>},
     {path: "booking", element:<Bookings/>},
+    {path: "rese/:id", element:<Reservations/>},
+
 
 
 ]}

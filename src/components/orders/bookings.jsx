@@ -22,7 +22,7 @@ import ModalDialog from '@mui/joy/ModalDialog';
 import Loader from "../load/load";
 import { useContext } from "react";
 import Rentings from './rentings';
-import { Context } from '../context/context';
+import { Context } from '../context/Context';
 
 
 export default function Bookings() {
@@ -35,8 +35,7 @@ export default function Bookings() {
   const {handleBook,Id} = useContext(Context);
   const isBooked = localStorage.getItem("isBooked");
 
-  console.log(Id);
-  console.log(isBooked);
+
   const fetchCars = async () => {
     const Allcars = await getDocs(collection(db, "orders"));
     const carsList = Allcars.docs.map((doc) => ({

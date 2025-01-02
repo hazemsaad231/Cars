@@ -12,7 +12,6 @@ import { toast, ToastContainer } from 'react-toastify';
 const Login = ()=>{
  
 
-
   let navigate = useNavigate();
 
 const isLoginIn = true

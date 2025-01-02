@@ -15,7 +15,7 @@ const Offer = () => {
 
 
 
-    const targetDate = new Date("2024-12-31T23:59:59").getTime();
+    const targetDate = new Date("2025-12-30T23:59:59").getTime();
 
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 

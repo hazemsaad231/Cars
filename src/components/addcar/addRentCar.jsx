@@ -6,7 +6,7 @@ import {useParams } from "react-router-dom";
 import { doc, updateDoc } from "firebase/firestore";
 import { getDoc } from "firebase/firestore";
 import { toast, ToastContainer } from "react-toastify";
-import { Context}  from "../Context/Context";
+import { Context}  from "../context/Context";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 

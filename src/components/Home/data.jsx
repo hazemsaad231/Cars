@@ -76,7 +76,7 @@ const Names = [
     },
     {
         id: 6,
-        name: "Moshamed Allam",
+        name: "Mostafa Allam",
         discription: "I recommend the site to everyone! I bought an economy car and it was a great experience from start to finish.",
         date: "Last updated 7 mins ago",
         image:boy6,

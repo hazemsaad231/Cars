@@ -4,7 +4,7 @@ import Close from '../Home/close';
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { useContext} from 'react';
-import { Context } from '../Context/Context';
+import { Context } from '../context/Context';
 import  { useState, useEffect } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -14,6 +14,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
 
    const admin = localStorage.getItem('role');
+   const id = localStorage.getItem('Id')
+   
 
    const { isDarkMode, toggleMode } = useContext(Context);
    const [isNavbarVisible, setNavbarVisible] = useState(false);
@@ -70,7 +72,8 @@ const Navbar = () => {
                 Rent a Car
               </Link>
             </li>
-            {admin ==='as6463275@gmail.com'|| admin ==='hazemsaad231@gmail.com' ? <li><Link to="booking" onClick={toggleNavbar}>Manage Cars</Link></li>:<li><a href='#contact' onClick={toggleNavbar}>Contact Us</a></li>
+            {admin ==='as6463275@gmail.com'|| admin ==='hazemsaad231@gmail.com' ? <li><Link to="booking" onClick={toggleNavbar}>Manage Cars</Link></li>:
+            <><li><Link to={`rese/${id}`} onClick={toggleNavbar} className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300'>My reservations</Link></li><li><a href='#contact' onClick={toggleNavbar}>Contact Us</a></li></>
             }
             <li><Close/></li>
           
@@ -94,7 +97,9 @@ const Navbar = () => {
             <li  ><Link to="offers" className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300' >Rent a Car</Link></li>
             {admin === 'as6463275@gmail.com'|| admin ==='hazemsaad231@gmail.com' ? 
             <li><Link to="booking" className='border-b-2 border-l-2 rounded-xl hover:border-blue-800 px-2 text-blue-700 border-transparent transition duration-300'>Manage Cars</Link></li>
-              :<li ><a href='#contact' className='border-b-2 border-l-2 rounded-xl hover:border-blue-800 px-2 text-blue-700 border-transparent transition duration-300'>Contact Us</a></li>
+
+              :   <><li><Link to={`rese/${id}`} className='border-b-2 border-l-2 px-2 rounded-xl hover:border-blue-800 text-blue-700 border-transparent transition duration-300'>My reservations</Link></li>
+              <li><a href='#contact' className='border-b-2 border-l-2 rounded-xl hover:border-blue-800 px-2 text-blue-700 border-transparent transition duration-300'>Contact Us</a></li></>
             }
             <li><Close/></li>
           

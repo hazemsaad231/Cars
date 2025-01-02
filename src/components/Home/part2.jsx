@@ -8,7 +8,7 @@ import { FaUserAlt } from "react-icons/fa";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import { useContext} from 'react';
-import { Context } from '../context/context';
+import { Context } from '../context/Context';
 const Two = () => {
 
 

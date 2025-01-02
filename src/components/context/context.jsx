@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { collection, getDocs, doc, updateDoc} from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { t } from "i18next";
 
 
 export const Context = createContext(null);
